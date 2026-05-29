@@ -53,7 +53,7 @@ const WebIcon: React.FC = () => (
 
 // ── Contact data ─────────────────────────────────────────────────────────────
 const contacts = [
-  { Icon: WebIcon,       label: 'Acesse nosso site',   value: 'avoautomação.com.br', color: TEAL,      frame: 220 },
+  { Icon: WebIcon,       label: 'Acesse nosso site',   value: 'avoautomacao.com.br', color: TEAL,      frame: 220 },
   { Icon: InstagramIcon, label: 'Mande um direct',     value: '@avoautomacao',        color: '#D92E7F', frame: 380 },
   { Icon: WhatsAppIcon,  label: 'Fale pelo WhatsApp',  value: '(43) 9 8459-3139',     color: WA_GREEN,  frame: 540 },
 ];
