@@ -1,4 +1,4 @@
-import { loadFont as loadDmSans } from '@remotion/google-fonts/DmSans';
+import { loadFont as loadDmSans } from '@remotion/google-fonts/DMSans';
 import { loadFont as loadInter } from '@remotion/google-fonts/Inter';
 
 export const COLORS = {
