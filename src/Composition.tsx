@@ -92,7 +92,7 @@ const Background: React.FC = () => {
 
 const AccentLine: React.FC = () => {
   const frame = useCurrentFrame();
-  const { width } = useVideoConfig();
+  useVideoConfig();
   const scaleX = interpolate(frame, [90, 130], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",

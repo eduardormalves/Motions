@@ -1,18 +1,16 @@
-import "./index.css";
-import { Composition } from "remotion";
-import { MyComposition } from "./Composition";
+import './index.css';
+import { Composition } from 'remotion';
+import { AvoVideo } from './AvoVideo';
 
 export const RemotionRoot: React.FC = () => {
   return (
-    <>
-      <Composition
-        id="MyComp"
-        component={MyComposition}
-        durationInFrames={150}
-        fps={30}
-        width={1280}
-        height={720}
-      />
-    </>
+    <Composition
+      id="AvoExplainer"
+      component={AvoVideo}
+      durationInFrames={10866}
+      fps={120}
+      width={1080}
+      height={1920}
+    />
   );
 };
