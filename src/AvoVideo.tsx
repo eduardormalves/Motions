@@ -172,18 +172,18 @@ export const AvoVideo: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const SCENE1_FRAMES = 660;
-  const SCENE2_FRAMES = 260 * FPS_SCALE;  // 1040
-  const SCENE3_FRAMES = 300 * FPS_SCALE;  // 1200
-  const SCENE4_FRAMES     = 2900;              // Booking + Pizza (internal slide)
-  const SCENE_NOCODE_FRAMES = 1380;            // NoCode — flow editor demo
+  const SCENE2_FRAMES = 1122;             // áudio acaba em 1074 + 48 fade (sem silêncio)
+  const SCENE3_FRAMES = 1272;             // ajustado ao áudio (+ 0.6s face ao original)
+  const SCENE4_FRAMES     = 2760;              // Booking + Pizza — última msg em ~2640, ~0.4s silêncio
+  const SCENE_NOCODE_FRAMES = 1452;            // NoCode — flow editor demo (ajustado ao áudio)
   const SCENE5_FRAMES = 300 * FPS_SCALE;  // 1200 — Features
-  const SCENE6_FRAMES = 240 * FPS_SCALE;  // 960  — ApiScene
+  const SCENE6_FRAMES = 1200;             // ApiScene (+ 2s para áudio)
   const SCENE7_FRAMES = 980;               // CTA Word Cloud — ends 7 frames after last word exits (~913)
-  const SCENE8_FRAMES = 220 * FPS_SCALE;  // 880  — Contact
+  const SCENE8_FRAMES = 1200;             // Contact — 10s total
 
   // Absolute frame at which Stats starts and the emoji starts falling
   const STATS_ABS_START = SCENE1_FRAMES - CARD_TRANSITION_FRAMES; // 600
-  const EMOJI_ABS       = STATS_ABS_START + 480;                   // 1080
+  const EMOJI_ABS       = STATS_ABS_START + 768;                   // 13.13s no áudio (6.40s × 120fps)
   const FADE_ABS_START  = STATS_ABS_START + SCENE2_FRAMES - FADE_TRANSITION_FRAMES; // 1592
 
   // Mirror the exact spring used in Stats.tsx for the ⚠️ emoji
@@ -218,7 +218,7 @@ export const AvoVideo: React.FC = () => {
 
   return (
     <AbsoluteFill>
-      <AbsoluteFill style={{ background: '#f0f4f8' }} />
+<AbsoluteFill style={{ background: '#f0f4f8' }} />
 
       {/* Wrapper de grayscale — desatura tudo uniformemente (cenas + topbar) */}
       <AbsoluteFill style={{ filter: `grayscale(${globalGrayscale})` }}>

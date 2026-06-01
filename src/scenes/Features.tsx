@@ -1,12 +1,15 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
 import { COLORS, FONTS } from '../theme';
+import { TypewriterText } from '../components/TypewriterText';
 
 const TEAL = '#1ddbb4';
 
@@ -34,6 +37,13 @@ const featureCards = [
   },
 ];
 
+const TITLE_START  = 30;
+const TITLE_SPEED  = 0.95 / 4;
+const TITLE_SEGMENTS = [
+  { text: 'Temos muito mais ',        color: '#1e293b' },
+  { text: 'para o seu negócio.',      color: TEAL },
+];
+
 const CARD_START   = 260;
 const CARD_STAGGER = 160;
 
@@ -47,6 +57,12 @@ export const Features: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-6.m4a')}
+        trimBefore={55}     // 0.46s
+        trimAfter={1184}    // 9.87s
+        volume={1}
+      />
 
       {/* ── Label + Headline — centered near the cards ────────── */}
       <div style={{ position: 'absolute', top: 470, left: 60, right: 60 }}>
@@ -60,15 +76,16 @@ export const Features: React.FC = () => {
           <div style={{ width: 30, height: 3, background: TEAL, borderRadius: 2 }} />
           E MAIS...
         </div>
-        <div style={{
-          opacity: entrance,
-          transform: `translateY(${titleY}px)`,
-          fontFamily: FONTS.display, fontSize: 64, fontWeight: 800,
-          lineHeight: 1.2, color: '#1e293b',
-        }}>
-          Temos muito mais{' '}
-          <span style={{ color: TEAL }}>para o seu negócio.</span>
-        </div>
+        <TypewriterText
+          segments={TITLE_SEGMENTS}
+          startFrame={TITLE_START}
+          charsPerFrame={TITLE_SPEED}
+          showCursor={true}
+          style={{
+            fontFamily: FONTS.display, fontSize: 64, fontWeight: 800,
+            lineHeight: 1.2, display: 'block',
+          }}
+        />
       </div>
 
       {/* ── Feature cards — slide up from bottom, teal glow on entry ── */}

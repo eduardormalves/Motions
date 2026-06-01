@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -82,6 +84,12 @@ export const ContactScene: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-9.m4a')}
+        trimBefore={43}     // 0.36s
+        trimAfter={1144}    // 9.53s
+        volume={1}
+      />
 
       {/* ── Label + Headline ──────────────────────────────────── */}
       <div style={{

@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -55,6 +57,12 @@ export const Problem: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-1-2-3.m4a')}
+        trimBefore={62}    // 0.52s
+        trimAfter={714}    // 5.95s
+        volume={1}
+      />
       {/* Headline + subtitle — safe zone */}
       <div style={{ position: 'absolute', top: 140, left: 60, right: 60 }}>
         {/* TypewriterText headline */}

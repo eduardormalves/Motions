@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -181,6 +183,12 @@ export const NoCodeScene: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-5.m4a')}
+        trimBefore={78}     // 0.65s
+        trimAfter={1487}    // 12.39s
+        volume={1}
+      />
 
       {/* ── Headline ─────────────────────────────────────────── */}
       <div style={{ position: 'absolute', top: 140, left: 60, right: 60 }}>

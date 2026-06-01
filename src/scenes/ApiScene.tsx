@@ -1,7 +1,9 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
   spring,
@@ -96,6 +98,12 @@ export const ApiScene: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-7.m4a')}
+        trimBefore={68}     // 0.57s
+        trimAfter={1200}    // 10s
+        volume={1}
+      />
 
       {/* ── Label + Headline + Subtitle ─────────────────────── */}
       <div style={{ position: 'absolute', top: 140, left: 60, right: 60 }}>

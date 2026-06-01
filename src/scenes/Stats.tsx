@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -49,6 +51,12 @@ export const Stats: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-1-2-3.m4a')}
+        trimBefore={808}   // 6.73s
+        trimAfter={1882}   // 15.68s
+        volume={1}
+      />
       <AbsoluteFill style={{ background: '#f0f4f8' }} />
 
       <div

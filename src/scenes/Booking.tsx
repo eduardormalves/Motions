@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -21,7 +23,7 @@ const HEADLINE_START    = 15;
 const HEADLINE_SPEED    = 0.95 / 4;
 const CHAT_FADE_START   = 88;
 const CHAT_SWITCH_FRAME = 1380; // start sliding to pizza after booking confirmation
-const PIZZA_OFFSET      = 1440; // pizza message frames start here
+const PIZZA_OFFSET      = 1290; // pizza message frames start here (adiantado 1.25s)
 
 type MsgDef =
   | { kind: 'client'; text: string; time: string; frame: number }
@@ -174,6 +176,12 @@ export const Booking: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: '#f0f4f8', overflow: 'hidden' }}>
+      <Audio
+        src={staticFile('audios/cena-4.m4a')}
+        trimBefore={71}     // 0.59s
+        trimAfter={2786}    // 23.22s
+        volume={1}
+      />
 
       {/* ── Label + Headline (stays fixed throughout) ────────── */}
       <div style={{ position: 'absolute', top: 140, left: 60, right: 60 }}>

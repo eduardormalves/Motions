@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   AbsoluteFill,
+  Audio,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
@@ -92,6 +94,13 @@ export const CTAScene: React.FC = () => {
         overflow: 'hidden',
       }}
     >
+      <Audio
+        src={staticFile('audios/cena-8.m4a')}
+        trimBefore={72}     // 0.60s
+        trimAfter={1039}    // 8.66s
+        volume={1}
+      />
+
       <AbsoluteFill
         style={{
           background:
